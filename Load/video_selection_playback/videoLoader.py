@@ -24,19 +24,16 @@ class videoloader:
 		loader.createOPFromFile(newVid);
 		
 
-	def DeleteAllVideos(self):
-		self.videoTable.clear(keepFirstRow=True)
-		#probably should delete any movie player ops..
-		vids = self.videoSwitch.inputs;
-		for vid in vids:
-			vid.destroy()
-	def LoadVideosFromFolder(self):
+	def RemoveAll(self):
+		loader.removeFiles(self.videoTable,self.videoSwitch)
+
+	def LoadFolder(self):
 		folder = ui.chooseFolder()
 		print("selected " + folder)
 		files = loader.loadFilesFromFolder(folder,".mov")
 		for file in files:
 			self.AddVideo(folder+"/"+file)
-	def LoadVideo(self):
+	def LoadSingle(self):
 		path = ui.chooseFile(load=True, fileTypes=[".mov"])
 		if path:
 			self.AddVideo(path)

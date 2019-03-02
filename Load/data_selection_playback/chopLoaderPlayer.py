@@ -9,6 +9,7 @@ class chopLoaderPlayer:
 		self.ownerComp = ownerComp
 		self.switch = op('switch1')
 		self.table = op('data')
+
 	def AddDataset(self, path):
 		newDat = {
 		"OPType" : tableDAT,
@@ -21,10 +22,19 @@ class chopLoaderPlayer:
 		loader.createOPFromFile(newDat);
 
 
-	def AddFolder(self):
+	def LoadFolder(self):
 		folder = ui.chooseFolder()
 		print("selected " + folder)
 		files = loader.loadFilesFromFolder(folder,".csv")
 		for file in files:
 			self.AddDataset(folder+"/"+file)
+	def LoadSingle(self):
+		path = ui.chooseFile(load=True, fileTypes=[".csv"])
+		if path:
+			self.AddDataset(path)
+
+	def RemoveAll(self):
+		loader.removeFiles(self.table,self.switch)
+	
+
 

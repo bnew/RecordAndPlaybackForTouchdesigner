@@ -7,14 +7,16 @@ class chopRecorder:
 		self.ownerComp = ownerComp
 		self.trail = op('trail1')
 		self.type = '.csv' #file type to save as
-		#self.ownerComp.Type = self.type
 		self.data = op('chopto1')
 		self.data.bypass = True
-		#self.filenameDisplay = op('filename')
+		self.filenameDisplay = op('text2')
 
 	def ChooseLocation(self):
-		self.ownerComp.Type = self.type
-		self.ownerComp.SaveDialogue();
+		saver = self.ownerComp;
+
+		saver.Type = self.type
+		saver.SaveDialogue();
+		self.filenameDisplay.par.text = saver.Filename
 
 
 	def Start(self):
@@ -24,6 +26,7 @@ class chopRecorder:
 	def Stop(self):
 		self.trail.par.active = 0
 		self.data.bypass = False
+		self.SaveChop();
 
 	def SaveChop(self):
 		saver = self.ownerComp;
@@ -31,6 +34,8 @@ class chopRecorder:
 			self.data.save(saver.Path+ "/"+ saver.Filename)
 			saver.IncrementFile();
 			print("file saved")
+			self.filenameDisplay.par.text = saver.Filename
+
 		else:
 			a = ui.messageBox('Error','Cant save without path, choose a location:', buttons=['cancel', 'choose location'])
 			if a:
