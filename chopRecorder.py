@@ -1,10 +1,7 @@
-"""
-Help: search "Extensions" in wiki
-"""
 
 class chopRecorder:
 	"""
-	chopRecorder description
+	records channel data into a trail, and saves it out as a csv
 	"""
 	def __init__(self, ownerComp):
 		self.ownerComp = ownerComp
