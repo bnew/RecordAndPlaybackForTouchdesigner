@@ -10,6 +10,7 @@ class videoRecorder:
 		self.type = ".mov"
 		self.recorder = op('moviefileout1')
 		self.displayText = op('text2')
+		self.displayText.par.text ="no file name selected"
 
 	def ChooseLocation(self):
 		oc = self.ownerComp
@@ -18,7 +19,12 @@ class videoRecorder:
 		self.setVideoPath();
 
 	def Start(self):
-		self.recorder.par.record = True;
+		if self.ownerComp.Filename:
+			self.recorder.par.record = True;
+		else:
+			ui.messageBox("dang","you gotta choose a location first!it didnt start recording")
+			#self.ChooseLocation()
+
 
 	def Stop(self):
 		self.recorder.par.record = False;
