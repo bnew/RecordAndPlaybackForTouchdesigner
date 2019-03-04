@@ -10,6 +10,7 @@ class chopRecorder:
 		self.data = op('chopto1')
 		self.data.bypass = True
 		self.filenameDisplay = op('text2')
+		self.filenameDisplay.par.text = "set filename!"
 
 	def ChooseLocation(self):
 		saver = self.ownerComp;
