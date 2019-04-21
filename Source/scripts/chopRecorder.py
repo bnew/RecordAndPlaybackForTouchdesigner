@@ -1,4 +1,3 @@
-
 class chopRecorder:
 	"""
 	records channel data into a trail, and saves it out as a csv
