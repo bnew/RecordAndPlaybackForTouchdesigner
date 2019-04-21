@@ -1,9 +1,14 @@
 # Chop and Top Recorder & Player
 This project is comprised of 5 components:
+
 A TOP recorder
+
 A CHOP recorder
+
 A TOP player
+
 A CHOP player
+
 And a component that contains all 4 and allows you to switch between them.
 
 See 'release'folder for reusable toxes
