@@ -11,7 +11,9 @@ See 'release'folder for reusable toxes
 # source
 
 uses my forked version of matthew ragan's [externalizer](https://github.com/bnew/touchdesigner-save-external)
+
 Press the menu button to switch modes
+
 all components are stored in 'Source/modules' with corresponding scripts in 'Source/scripts'
 
 # recording
@@ -21,4 +23,5 @@ when selecting a top or chop, recording option, the filename for your recording 
 
 # to do
 update readme :)
+
 thoroughly test all components
